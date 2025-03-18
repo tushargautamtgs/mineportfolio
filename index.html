@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tushar Gautam | Android Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0e0e0e;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #00d1b2;
+            margin-bottom: 10px;
+            text-shadow: 0 0 3px #00d1b2, 0 0 5px #00d1b2;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #cccccc;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00d1b2;
+            border-left: 5px solid #00d1b2;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: #00d1b2;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul li:hover {
+            color: #00d1b2;
+        }
+
+        .card {
+            background: #1c1c1c;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 209, 178, 0.3);
+        }
+
+        .fadeIn {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slider {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+            opacity: 0;
+            color: #cccccc;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .slider.open {
+            max-height: 100px;
+            opacity: 1;
+            padding: 10px;
+            background: rgba(0, 209, 178, 0.1);
+        }
+
+        .slider:hover {
+            color: #00d1b2;
+            background: rgba(0, 209, 178, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1f1f1f;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+<header class="fadeIn">
+    <h1>Tushar Gautam</h1>
+    <p>Android Developer | Kotlin Learner | Cyber & Finance Enthusiast</p>
+</header>
+
+<section class="fadeIn">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>B.Tech CSE (Final Year, AKTU). Passionate Android developer learning Kotlin. I have a keen interest in cybersecurity and finance, and I love building meaningful apps that solve real-world problems.</p>
+    </div>
+</section>
+
+<section class="fadeIn">
+    <h2>Projects</h2>
+    <div class="card">
+        <ul>
+            <li onclick="toggleSlider('proj1')"><i class="fas fa-tasks"></i><strong>Task Manager App</strong></li>
+            <div id="proj1" class="slider" onclick="window.open('https://github.com/tushargautamtgs/TaskManagerApp', '_blank')">
+                <i class="fas fa-tasks" style="color:#00d1b2;"></i>Kotlin-based productivity tool with Firebase integration.
+            </div>
+
+            <li onclick="toggleSlider('proj2')"><i class="fas fa-shield-alt"></i><strong>Cyber Complaint Resolver App</strong></li>
+            <div id="proj2" class="slider" onclick="window.open('https://github.com/tushargautamtgs/CyberComplaintApp', '_blank')">
+                <i class="fas fa-shield-alt" style="color:#00d1b2;"></i>App for connecting users with legal experts and tracking complaints.
+            </div>
+        </ul>
+    </div>
+</section>
+
+<section class="fadeIn">
+    <h2>Skills</h2>
+    <div class="card">
+        <ul>
+            <li onclick="toggleSlider('skill1')"><i class="fas fa-code"></i>Kotlin, Java, Firebase</li>
+            <div id="skill1" class="slider">
+                <i class="fas fa-code" style="color:#00d1b2;"></i>Experienced in mobile dev with Firebase backend.
+            </div>
+
+            <li onclick="toggleSlider('skill2')"><i class="fas fa-tools"></i>Android Studio, Git, GitHub</li>
+            <div id="skill2" class="slider">
+                <i class="fas fa-tools" style="color:#00d1b2;"></i>Proficient in tools for efficient development.
+            </div>
+
+            <li onclick="toggleSlider('skill3')"><i class="fas fa-lock"></i>Cybersecurity & Finance Systems</li>
+            <div id="skill3" class="slider">
+                <i class="fas fa-lock" style="color:#00d1b2;"></i>Understanding of security principles and finance systems.
+            </div>
+        </ul>
+    </div>
+</section>
+
+<section class="fadeIn contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <ul>
+            <li onclick="toggleSlider('contactEmail')"><i class="fas fa-envelope"></i>Email</li>
+            <div id="contactEmail" class="slider" onclick="window.location.href='mailto:tushargautamtgs@gmail.com'">
+                <i class="fas fa-envelope" style="color:#00d1b2;"></i>tushargautamtgs@gmail.com
+            </div>
+
+            <li onclick="toggleSlider('contactLinkedIn')"><i class="fab fa-linkedin"></i>LinkedIn</li>
+            <div id="contactLinkedIn" class="slider" onclick="window.open('https://www.linkedin.com/in/tushargautamtgs/', '_blank')">
+                <i class="fab fa-linkedin" style="color:#00d1b2;"></i>linkedin.com/in/tushargautamtgs
+            </div>
+
+            <li onclick="toggleSlider('contactGitHub')"><i class="fab fa-github"></i>GitHub</li>
+            <div id="contactGitHub" class="slider" onclick="window.open('https://github.com/tushargautamtgs', '_blank')">
+                <i class="fab fa-github" style="color:#00d1b2;"></i>github.com/tushargautamtgs
+            </div>
+        </ul>
+    </div>
+</section>
+
+<footer class="fadeIn">
+    <p>&copy; 2025 Tushar Gautam. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleSlider(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
